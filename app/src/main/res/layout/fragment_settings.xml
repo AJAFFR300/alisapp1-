@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:text="Settings"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_15sdp"
+            android:textColor="@color/text_color"
+            android:fontFamily="@font/sfnsbold"
+            android:textSize="@dimen/_14ssp"/>
+
+        <RelativeLayout
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Temperature"
+                android:fontFamily="@font/sfnsdisplay"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/text_color"/>
+
+            <Spinner
+                android:id="@+id/scale"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="@color/second_text_color"
+                android:entries="@array/temperature_scale"
+                android:fontFamily="@font/sfnsdisplay"
+                android:gravity="center_vertical"
+                android:paddingEnd="@dimen/_10sdp"
+                android:layout_alignParentRight="true"/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Refresh at"
+                android:fontFamily="@font/sfnsdisplay"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/text_color"/>
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="@color/second_text_color"
+                android:layout_toStartOf="@+id/time_dropdown"
+                android:text="08:00"
+                android:fontFamily="@font/sfnsdisplay"
+                android:gravity="center_vertical"
+                android:paddingEnd="@dimen/_10sdp"/>
+
+            <ImageView
+                android:id="@+id/time_dropdown"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="match_parent"
+                android:src="@drawable/arrow_down"
+                android:padding="@dimen/_5sdp"
+                android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Refresh at"
+                android:fontFamily="@font/sfnsdisplay"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/_10sdp"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="@color/text_color"/>
+
+            <TextView
+                android:id="@+id/time2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="@color/second_text_color"
+                android:layout_toStartOf="@+id/time_dropdown2"
+                android:text="20:00"
+                android:fontFamily="@font/sfnsdisplay"
+                android:gravity="center_vertical"
+                android:paddingEnd="@dimen/_10sdp"/>
+
+            <ImageView
+                android:id="@+id/time_dropdown2"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="match_parent"
+                android:src="@drawable/arrow_down"
+                android:padding="@dimen/_5sdp"
+                android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

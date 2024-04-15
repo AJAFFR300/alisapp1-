@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/botto_navigation_map"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.ali.weather.fragments.HomeFragment"
+        android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.ali.weather.fragments.MapFragment"
+        android:label="MapFragment" />
+    <fragment
+        android:id="@+id/favouriteFragment"
+        android:name="com.ali.weather.fragments.FavouriteFragment"
+        android:label="FavouriteFragment" />
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.ali.weather.fragments.SettingFragment"
+        android:label="SettingFragment" />
+</navigation>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Weather</string>
+
+    <string name="api_key"></string>
+    <string-array name="temperature_scale">
+        <item>Celcius</item>
+        <item>Fahrenheit</item>
+    </string-array>
+</resources>

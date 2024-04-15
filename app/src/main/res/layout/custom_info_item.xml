@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/_180sdp"
+            android:layout_height="wrap_content"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_15ssp">
+
+            <RelativeLayout
+                android:padding="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/temp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=''
+                    android:textSize="@dimen/_26ssp"
+                    android:textColor="@color/text_color"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_toStartOf="@+id/icon"/>
+
+                <TextView
+                    android:id="@+id/location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/second_text_color"
+                    android:layout_below="@+id/temp"
+                    android:textSize="@dimen/_12ssp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_toStartOf="@+id/icon"/>
+
+
+                <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:src="@drawable/sun"
+                    android:padding="@dimen/_2sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="@dimen/_1ssp"
+                    android:layout_marginTop="@dimen/_4sdp"/>
+
+                <LinearLayout
+                    android:layout_below="@+id/location"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:gravity="center_horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/wind"
+                            app:tint="@color/icon_tint"
+                            android:padding="@dimen/_4sdp"/>
+
+                        <TextView
+                            android:id="@+id/wind"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:gravity="center_vertical"
+                            android:textColor="@color/text_color"
+                            android:fontFamily="@font/sfnsdisplay"
+                            android:textSize="@dimen/_10ssp"
+                            android:layout_marginStart="@dimen/_5sdp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:gravity="center_horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/drop"
+                            app:tint="@color/icon_tint"
+                            android:padding="@dimen/_4sdp"/>
+
+                        <TextView
+                            android:id="@+id/humidity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:gravity="center_vertical"
+                            android:textColor="@color/text_color"
+                            android:fontFamily="@font/sfnsdisplay"
+                            android:textSize="@dimen/_10ssp"
+                            android:layout_marginStart="@dimen/_5sdp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+</layout>

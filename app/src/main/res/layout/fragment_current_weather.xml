@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="weather"
+            type="com.ali.weather.model.WeatherItem" />
+
+        <variable
+            name="isCelsius"
+            type="Boolean" />
+
+        <import type="com.ali.weather.utilities.Utils"/>
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:background="@color/bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/weather_icon"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_130sdp"
+                android:src="@drawable/new_moon"
+                android:layout_marginTop="@dimen/_20sdp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{weather.weather}"
+                android:textSize="@dimen/_11ssp"
+                android:background="@drawable/classification_bg"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingTop="@dimen/_4sdp"
+                android:paddingBottom="@dimen/_4sdp"
+                android:textColor="@color/text_color"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_20sdp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@{isCelsius ? Utils.getSplittedTemperature(weather.temperature)[0] : Utils.getSplittedTemperature(weather.temperature)[1]}'
+                android:layout_gravity="center_horizontal"
+                android:textSize="@dimen/_50ssp"
+                android:textColor="@color/text_color"
+                android:fontFamily="@font/sfnsbold"
+                android:layout_marginTop="@dimen/_20sdp"/>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/wind"
+                        app:tint="@color/icon_tint"
+                        android:padding="@dimen/_3sdp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@{weather.wind}"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/text_color"
+                        android:fontFamily="@font/sfnsdisplay"
+                        android:textSize="@dimen/_11ssp"
+                        android:layout_marginStart="@dimen/_5sdp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/drop"
+                        app:tint="@color/icon_tint"
+                        android:padding="@dimen/_3sdp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@{weather.humidity}"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/text_color"
+                        android:fontFamily="@font/sfnsdisplay"
+                        android:textSize="@dimen/_11ssp"
+                        android:layout_marginStart="@dimen/_5sdp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:id="@+id/pressure_icon"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/pressure_donw"
+                        app:tint="@color/icon_tint"
+                        android:padding="@dimen/_3sdp"/>
+
+                    <TextView
+                        android:id="@+id/pressure_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@{weather.pressure}"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/text_color"
+                        android:fontFamily="@font/sfnsdisplay"
+                        android:textSize="@dimen/_11ssp"
+                        android:layout_marginStart="@dimen/_5sdp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

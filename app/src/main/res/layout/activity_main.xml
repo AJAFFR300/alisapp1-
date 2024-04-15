@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="isLoading"
+            type="Boolean" />
+
+        <import type="android.view.View"/>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg"
+        tools:context=".activities.MainActivity">
+
+        <fragment
+            android:id="@+id/fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottom_navigation"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/bottom_navigation_map"
+            tools:layout="@layout/fragment_home" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/bg"
+            app:itemIconSize="@dimen/_15sdp"
+            app:itemIconTint="@drawable/bottom_navigation_selector"
+            app:itemPaddingTop="@dimen/_15sdp"
+            app:itemTextColor="@drawable/bottom_navigation_selector"
+            app:labelVisibilityMode="unlabeled"
+            app:menu="@menu/bottom_menu" />
+
+        <LinearLayout
+            android:animateLayoutChanges="true"
+            android:id="@+id/no_internet_layout"
+            android:visibility="visible"
+            android:elevation="@dimen/_5sdp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@color/white">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60sdp"
+                android:src="@drawable/no_wifi"
+                android:visibility="@{isLoading ? View.GONE : View.VISIBLE, default=visible}"/>
+
+            <TextView
+                android:layout_marginTop="@dimen/_10ssp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color"
+                android:text="Please check your internet connection\nand try again"
+                android:gravity="center"
+                android:textSize="@dimen/_10ssp"
+                android:visibility="@{isLoading ? View.GONE : View.VISIBLE, default=visible}"/>
+
+            <Button
+                android:id="@+id/retry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Retry"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:visibility="@{isLoading ? View.GONE : View.VISIBLE, default=visible}"/>
+
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="@{isLoading ? View.VISIBLE : View.GONE, default=gone}"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="text_color">#1f2e61</color>
+    <color name="secondary_bg">#f2efec</color>
+    <color name="bg">#F6F6F6</color>
+    <color name="second_text_color">#9eadba</color>
+    <color name="icon_tint">#6c8ab8</color>
+    <color name="bottom_unselect">#d2d2be</color>
+    <color name="peach">#f2a585</color>
+</resources>
